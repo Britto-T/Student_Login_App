@@ -73,8 +73,7 @@ const StudentsLogin=()=>{
             </div>
             <div>
               <input
-                type="text" {...register("phone",{required:true,maxLength:{value:15,message:'Max Length Exceeded'}})} placeholder="Phone Number"
-              />
+                type="text" {...register("phone",{required:true,maxLength:15})} placeholder="Phone Number"/>
                {errors?.name?.type ==="required" ?(
                 <p className="errorSpan">This field is required</p>
               ):null}
@@ -89,6 +88,9 @@ const StudentsLogin=()=>{
             })} placeholder="E-Mail" />
               {errors?.name?.type ==="required" ?(
                 <p className="errorSpan">This field is required</p>
+              ):null}
+               {errors?.name?.type ==="required" ?(
+                <p className="errorSpan">Please Enter a valid E-mail</p>
               ):null}
             </div>
             <div>
