@@ -59,17 +59,19 @@
     hyphens: auto;
     color:black;
   }
-  
+
+  .divCount{
+    display:flex;
+    justify-content:flex-end;
+  }
+
   .divSection{
     display:flex;
-    flex-direction: row;
+    flex-direction:row;
     flex-wrap: wrap;
-    margin :2px auto;
+    justify-content: flex-start;
   }
-  .divCount{
-  display:flex;
-  justify-content:flex-end;
-  }
+
   .errorSpan{
     color:red;
   }

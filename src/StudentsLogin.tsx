@@ -136,7 +136,7 @@ const StudentsLogin = () => {
           </div>
         </div>
       </form>
-      <div className="divSection">
+      <div>
         <StudentsDetailsDisplay
           studentDetails={studentDetails}
           limiter={limiter}

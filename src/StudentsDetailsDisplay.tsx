@@ -18,27 +18,25 @@ const StudentsDetailsDisplay:React.FC<IStudentsDetailsDisplay>=(props:any)=>{
       <>
         <div className="divCount">
           <div>
-            <label>Count</label>
+            <label>Limiter</label>
             <input type="text" value={props.limiter} onChange={changeLimitHandler}></input>
           </div>
         </div>
-
+        <div className="divSection" >
         {props.studentDetails.map((item: any, key: any) => {
           debugger
          if(key<props.limiter){
           return (   
-            <div className="divSection" key={key}>
-              <div className="section">
+              <div className="section" key={key}>
                 <div>Name : {item.name} </div>
                 <div>Phone Number : {item.phone}</div>
                 <div>E-Mail : {item.email}</div>
                 <div>Zip Code : {item.zipcode}</div>
               </div>
-            </div>
-             
           );
           }
         })}
+        </div>
       </>
     );
 }
