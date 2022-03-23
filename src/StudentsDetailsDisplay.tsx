@@ -5,25 +5,26 @@ import "./Students.css"
 interface IStudentsDetailsDisplay{
     studentDetails:any,
     limiter:number,
-    onLimitChange(data:any):any
+    changeLimit:any
 }
 
 const StudentsDetailsDisplay:React.FC<IStudentsDetailsDisplay>=(props:any)=>{
-    const onLimitChange=(event:any)=>{
-        props.onLimitChange(event.target.value);
-    }
-    
+ 
+  const changeLimitHandler=(event:any)=>{
+    props.changeLimit(event.target.value)
+ }
+
     return (
       <>
         <div className="divCount">
           <div>
             <label>Count</label>
-            <input type="text" value={props.studentDetails.length} onChange={onLimitChange}></input>
+            <input type="text" value={props.limiter} onChange={changeLimitHandler}></input>
           </div>
         </div>
 
         {props.studentDetails.map((item: any, key: any) => {
-        // if(key==props.limiter){
+         if(key<props.limiter){
           return (   
             <div className="divSection" key={key}>
               <div className="section">
@@ -35,7 +36,7 @@ const StudentsDetailsDisplay:React.FC<IStudentsDetailsDisplay>=(props:any)=>{
             </div>
              
           );
-        // }
+          }
         })}
       </>
     );
