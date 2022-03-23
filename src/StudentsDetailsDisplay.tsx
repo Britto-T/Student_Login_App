@@ -24,6 +24,7 @@ const StudentsDetailsDisplay:React.FC<IStudentsDetailsDisplay>=(props:any)=>{
         </div>
 
         {props.studentDetails.map((item: any, key: any) => {
+          debugger
          if(key<props.limiter){
           return (   
             <div className="divSection" key={key}>
